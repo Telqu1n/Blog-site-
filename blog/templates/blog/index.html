@@ -1,23 +1,20 @@
 {% extends 'base.html' %} 
-{% load static %}
+{% load static %} 
 
-{% block title %} My Blog {% endblock %} 
+{% block title %} My Blog {%endblock %} 
 
-{% block css_files %}  
-  <link rel="stylesheet" href="{% static  "blog/index.css"%}"/>
-{% endblock  %}
+{% block css_files %} 
+  <link rel="stylesheet" href="{% {% static 'blog/post.css' %} %}">
+  <link rel="stylesheet" href="{% static 'blog/index.css' %}"/> 
+{% endblock %}
 
 {% block content %}
-<header id="main-navigation">
-  <h><a href="">Jack's Blog</a></h>
-  <nav>
-    <a href="">All Posts</a>
-  </nav>
-</header>
-
 <section id="welcome">
   <header>
-    <img src="" alt="Jack - The author of the blog " />
+    <img
+      src="{% static 'blog/images/cat.png' %}"
+      alt="Jack - The author of the blog "
+    />
     <h2>Jacks Blog</h2>
     <p>Hi i am jack and i like to learn coding since i find it fun</p>
   </header>
@@ -27,17 +24,7 @@
   <h2>My latest Thoughts</h2>
 
   <ul>
-    <li>
-      <article class="post">
-        <a href="">
-          <img src="" alt="Mountain Hiking" />
-          <div class="post_content">
-            <h3>Mountain Hiking</h3>
-            <p>There's nothing like the views on a mountain</p>
-          </div>
-        </a>
-      </article>
-    </li>
+    {% include 'blog/includes/posts.html' %}
   </ul>
 </section>
 
