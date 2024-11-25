@@ -11,9 +11,9 @@
 </head>
 <body>
   <header id="main-navigation">
-    <h><a href="">Jack's Blog</a></h>
+    <h><a href="{% url 'starting-page' %}">Jack's Blog</a></h>
     <nav>
-      <a href="">All Posts</a>
+      <a href="{% url 'posts-page' %}">All Posts</a>
     </nav>
   </header>  
   {% block content %}
