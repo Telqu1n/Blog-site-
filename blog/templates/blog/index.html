@@ -1,9 +1,49 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} 
+{% load static %}
 
-{% block title %}
-  My Blog 
-{% endblock %}
+{% block title %} My Blog {% endblock %} 
+
+{% block css_files %}  
+  <link rel="stylesheet" href="{% static  "blog/index.css"%}"/>
+{% endblock  %}
 
 {% block content %}
-  <h1>Welcome to my blog</h1>
-{% endblock  %}
+<header id="main-navigation">
+  <h><a href="">Jack's Blog</a></h>
+  <nav>
+    <a href="">All Posts</a>
+  </nav>
+</header>
+
+<section id="welcome">
+  <header>
+    <img src="" alt="Jack - The author of the blog " />
+    <h2>Jacks Blog</h2>
+    <p>Hi i am jack and i like to learn coding since i find it fun</p>
+  </header>
+</section>
+
+<section id="latest-posts">
+  <h2>My latest Thoughts</h2>
+
+  <ul>
+    <li>
+      <article class="post">
+        <a href="">
+          <img src="" alt="Mountain Hiking" />
+          <div class="post_content">
+            <h3>Mountain Hiking</h3>
+            <p>There's nothing like the views on a mountain</p>
+          </div>
+        </a>
+      </article>
+    </li>
+  </ul>
+</section>
+
+<section id="about">
+  <h2>What i do</h2>
+  <p>I love programming</p>
+  <p>My goal is to keep getting better at coding and as a developer.</p>
+</section>
+{% endblock %}
